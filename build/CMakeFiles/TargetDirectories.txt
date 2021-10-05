@@ -1,0 +1,7 @@
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/edit_cache.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/benchmark.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/benchmark-blas.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/rebuild_cache.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/benchmark-basic-omp.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/benchmark-blocked-omp.dir
+/global/homes/i/itsjes/mmul-omp-harness-instructional/build/CMakeFiles/bench-blocked-omp.dir

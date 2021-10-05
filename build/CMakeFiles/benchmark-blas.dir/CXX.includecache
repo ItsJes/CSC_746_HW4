@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/i/itsjes/mmul-omp-harness-instructional/dgemm-blas.cpp
+cblas.h
+-
+omp.h
+-
+likwid-stuff.h
+/global/homes/i/itsjes/mmul-omp-harness-instructional/likwid-stuff.h
+
+/global/homes/i/itsjes/mmul-omp-harness-instructional/likwid-stuff.h
+likwid.h
+-
+

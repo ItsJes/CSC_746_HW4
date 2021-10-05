@@ -1,0 +1,1 @@
+/opt/cray/pe/craype/2.6.2/bin/CC -O3 -DNDEBUG -fopenmp CMakeFiles/benchmark-blocked-omp.dir/dgemm-blocked-omp.cpp.o CMakeFiles/bench-blocked-omp.dir/benchmark.cpp.o -o benchmark-blocked-omp  -Wl,-rpath,/global/common/sw/install/cray-cnl7-haswell/likwid-5.2.0-ec6ahrr/lib /global/common/sw/install/cray-cnl7-haswell/likwid-5.2.0-ec6ahrr/lib/liblikwid.so 

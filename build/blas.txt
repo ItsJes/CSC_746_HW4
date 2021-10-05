@@ -1,0 +1,279 @@
+srun -n 1 likwid-perfctr -m -g HBM_CACHE -C N:0-0 ./benchmark-blas -N 128
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon Phi(TM) CPU 7250 @ 1.40GHz
+CPU type:	Intel Xeon Phi (Knights Landing) (Co)Processor
+CPU clock:	1.40 GHz
+--------------------------------------------------------------------------------
+Description:	Reference dgemm.
+
+Hello world, I'm thread 0 out of 1 total threads. 
+Working on problem size N=128 
+ Elapsed time is : 0.1340 (sec) 
+--------------------------------------------------------------------------------
+Region MMUL_Region, Group 1: HBM_CACHE
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   0.131675 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+----------+------------+
+|         Event         |  Counter | HWThread 0 |
++-----------------------+----------+------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  |    4624206 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  |    6774478 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  |    6322680 |
+|    EDC_RPQ_INSERTS    | EDBOX0C0 |     221413 |
+|    EDC_RPQ_INSERTS    | EDBOX1C0 |     201284 |
+|    EDC_RPQ_INSERTS    | EDBOX2C0 |     221879 |
+|    EDC_RPQ_INSERTS    | EDBOX3C0 |     200235 |
+|    EDC_RPQ_INSERTS    | EDBOX4C0 |     220319 |
+|    EDC_RPQ_INSERTS    | EDBOX5C0 |     200921 |
+|    EDC_RPQ_INSERTS    | EDBOX6C0 |     221610 |
+|    EDC_RPQ_INSERTS    | EDBOX7C0 |     201803 |
+|    EDC_WPQ_INSERTS    | EDBOX0C1 |      54620 |
+|    EDC_WPQ_INSERTS    | EDBOX1C1 |      49375 |
+|    EDC_WPQ_INSERTS    | EDBOX2C1 |      54199 |
+|    EDC_WPQ_INSERTS    | EDBOX3C1 |      49161 |
+|    EDC_WPQ_INSERTS    | EDBOX4C1 |      53721 |
+|    EDC_WPQ_INSERTS    | EDBOX5C1 |      49225 |
+|    EDC_WPQ_INSERTS    | EDBOX6C1 |      54009 |
+|    EDC_WPQ_INSERTS    | EDBOX7C1 |      49524 |
+|     EDC_MISS_CLEAN    | EUBOX0C0 |       3467 |
+|     EDC_MISS_CLEAN    | EUBOX1C0 |       3400 |
+|     EDC_MISS_CLEAN    | EUBOX2C0 |       3460 |
+|     EDC_MISS_CLEAN    | EUBOX3C0 |       3392 |
+|     EDC_MISS_CLEAN    | EUBOX4C0 |       3461 |
+|     EDC_MISS_CLEAN    | EUBOX5C0 |       3392 |
+|     EDC_MISS_CLEAN    | EUBOX6C0 |       3463 |
+|     EDC_MISS_CLEAN    | EUBOX7C0 |       3392 |
+|     EDC_MISS_DIRTY    | EUBOX0C1 |        272 |
+|     EDC_MISS_DIRTY    | EUBOX1C1 |        460 |
+|     EDC_MISS_DIRTY    | EUBOX2C1 |        274 |
+|     EDC_MISS_DIRTY    | EUBOX3C1 |        461 |
+|     EDC_MISS_DIRTY    | EUBOX4C1 |        277 |
+|     EDC_MISS_DIRTY    | EUBOX5C1 |        469 |
+|     EDC_MISS_DIRTY    | EUBOX6C1 |        273 |
+|     EDC_MISS_DIRTY    | EUBOX7C1 |        464 |
+|      MC_CAS_READS     |  MBOX0C0 |      30123 |
+|     MC_CAS_WRITES     |  MBOX0C1 |        521 |
+|      MC_CAS_READS     |  MBOX1C0 |      30177 |
+|     MC_CAS_WRITES     |  MBOX1C1 |        471 |
+|      MC_CAS_READS     |  MBOX2C0 |      30155 |
+|     MC_CAS_WRITES     |  MBOX2C1 |        486 |
+|      MC_CAS_READS     |  MBOX4C0 |      30164 |
+|     MC_CAS_WRITES     |  MBOX4C1 |        469 |
+|      MC_CAS_READS     |  MBOX5C0 |      30121 |
+|     MC_CAS_WRITES     |  MBOX5C1 |        510 |
+|      MC_CAS_READS     |  MBOX6C0 |      30146 |
+|     MC_CAS_WRITES     |  MBOX6C1 |        493 |
++-----------------------+----------+------------+
+
++----------------------------------------------+------------+
+|                    Metric                    | HWThread 0 |
++----------------------------------------------+------------+
+|              Runtime (RDTSC) [s]             |     0.1317 |
+|             Runtime unhalted [s]             |     0.0048 |
+|                  Clock [MHz]                 |  1500.0364 |
+|                      CPI                     |     1.4650 |
+|    MCDRAM Memory read bandwidth [MBytes/s]   |   806.3900 |
+|    MCDRAM Memory read data volume [GBytes]   |     0.1062 |
+| MCDRAM Memory writeback bandwidth [MBytes/s] |   113.2231 |
+| MCDRAM Memory writeback data volume [GBytes] |     0.0149 |
+|      MCDRAM Memory bandwidth [MBytes/s]      |   919.6131 |
+|      MCDRAM Memory data volume [GBytes]      |     0.1211 |
+|     DDR Memory read bandwidth [MBytes/s]     |    87.9186 |
+|     DDR Memory read data volume [GBytes]     |     0.0116 |
+|   DDR Memory writeback bandwidth [MBytes/s]  |     1.4338 |
+|   DDR Memory writeback data volume [GBytes]  |     0.0002 |
+|        DDR Memory bandwidth [MBytes/s]       |    89.3525 |
+|        DDR Memory data volume [GBytes]       |     0.0118 |
++----------------------------------------------+------------+
+
+srun -n 1 likwid-perfctr -m -g HBM_CACHE -C N:0-0 ./benchmark-blas -N 512
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon Phi(TM) CPU 7250 @ 1.40GHz
+CPU type:	Intel Xeon Phi (Knights Landing) (Co)Processor
+CPU clock:	1.40 GHz
+--------------------------------------------------------------------------------
+Description:	Reference dgemm.
+
+Hello world, I'm thread 0 out of 1 total threads. 
+Working on problem size N=512 
+ Elapsed time is : 0.1455 (sec) 
+--------------------------------------------------------------------------------
+Region MMUL_Region, Group 1: HBM_CACHE
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   0.143241 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+----------+------------+
+|         Event         |  Counter | HWThread 0 |
++-----------------------+----------+------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  |   26120550 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  |   20899310 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  |   19506280 |
+|    EDC_RPQ_INSERTS    | EDBOX0C0 |     257501 |
+|    EDC_RPQ_INSERTS    | EDBOX1C0 |     245527 |
+|    EDC_RPQ_INSERTS    | EDBOX2C0 |     258215 |
+|    EDC_RPQ_INSERTS    | EDBOX3C0 |     244840 |
+|    EDC_RPQ_INSERTS    | EDBOX4C0 |     257734 |
+|    EDC_RPQ_INSERTS    | EDBOX5C0 |     244760 |
+|    EDC_RPQ_INSERTS    | EDBOX6C0 |     257934 |
+|    EDC_RPQ_INSERTS    | EDBOX7C0 |     245657 |
+|    EDC_WPQ_INSERTS    | EDBOX0C1 |      66067 |
+|    EDC_WPQ_INSERTS    | EDBOX1C1 |      63300 |
+|    EDC_WPQ_INSERTS    | EDBOX2C1 |      65984 |
+|    EDC_WPQ_INSERTS    | EDBOX3C1 |      63317 |
+|    EDC_WPQ_INSERTS    | EDBOX4C1 |      65704 |
+|    EDC_WPQ_INSERTS    | EDBOX5C1 |      62787 |
+|    EDC_WPQ_INSERTS    | EDBOX6C1 |      65988 |
+|    EDC_WPQ_INSERTS    | EDBOX7C1 |      63176 |
+|     EDC_MISS_CLEAN    | EUBOX0C0 |        426 |
+|     EDC_MISS_CLEAN    | EUBOX1C0 |        423 |
+|     EDC_MISS_CLEAN    | EUBOX2C0 |        434 |
+|     EDC_MISS_CLEAN    | EUBOX3C0 |        416 |
+|     EDC_MISS_CLEAN    | EUBOX4C0 |        425 |
+|     EDC_MISS_CLEAN    | EUBOX5C0 |        417 |
+|     EDC_MISS_CLEAN    | EUBOX6C0 |        427 |
+|     EDC_MISS_CLEAN    | EUBOX7C0 |        428 |
+|     EDC_MISS_DIRTY    | EUBOX0C1 |        147 |
+|     EDC_MISS_DIRTY    | EUBOX1C1 |        144 |
+|     EDC_MISS_DIRTY    | EUBOX2C1 |        146 |
+|     EDC_MISS_DIRTY    | EUBOX3C1 |        144 |
+|     EDC_MISS_DIRTY    | EUBOX4C1 |        147 |
+|     EDC_MISS_DIRTY    | EUBOX5C1 |        141 |
+|     EDC_MISS_DIRTY    | EUBOX6C1 |        142 |
+|     EDC_MISS_DIRTY    | EUBOX7C1 |        141 |
+|      MC_CAS_READS     |  MBOX0C0 |      28007 |
+|     MC_CAS_WRITES     |  MBOX0C1 |        200 |
+|      MC_CAS_READS     |  MBOX1C0 |      28010 |
+|     MC_CAS_WRITES     |  MBOX1C1 |        190 |
+|      MC_CAS_READS     |  MBOX2C0 |      28015 |
+|     MC_CAS_WRITES     |  MBOX2C1 |        195 |
+|      MC_CAS_READS     |  MBOX4C0 |      28002 |
+|     MC_CAS_WRITES     |  MBOX4C1 |        198 |
+|      MC_CAS_READS     |  MBOX5C0 |      28019 |
+|     MC_CAS_WRITES     |  MBOX5C1 |        192 |
+|      MC_CAS_READS     |  MBOX6C0 |      28019 |
+|     MC_CAS_WRITES     |  MBOX6C1 |        190 |
++-----------------------+----------+------------+
+
++----------------------------------------------+------------+
+|                    Metric                    | HWThread 0 |
++----------------------------------------------+------------+
+|              Runtime (RDTSC) [s]             |     0.1432 |
+|             Runtime unhalted [s]             |     0.0149 |
+|                  Clock [MHz]                 |  1499.9781 |
+|                      CPI                     |     0.8001 |
+|    MCDRAM Memory read bandwidth [MBytes/s]   |   897.0060 |
+|    MCDRAM Memory read data volume [GBytes]   |     0.1285 |
+| MCDRAM Memory writeback bandwidth [MBytes/s] |   155.5988 |
+| MCDRAM Memory writeback data volume [GBytes] |     0.0223 |
+|      MCDRAM Memory bandwidth [MBytes/s]      |  1052.6048 |
+|      MCDRAM Memory data volume [GBytes]      |     0.1508 |
+|     DDR Memory read bandwidth [MBytes/s]     |    75.0947 |
+|     DDR Memory read data volume [GBytes]     |     0.0108 |
+|   DDR Memory writeback bandwidth [MBytes/s]  |     0.5205 |
+|   DDR Memory writeback data volume [GBytes]  |     0.0001 |
+|        DDR Memory bandwidth [MBytes/s]       |    75.6152 |
+|        DDR Memory data volume [GBytes]       |     0.0108 |
++----------------------------------------------+------------+
+
+srun -n 1 likwid-perfctr -m -g HBM_CACHE -C N:0-0 ./benchmark-blas -N 2048
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon Phi(TM) CPU 7250 @ 1.40GHz
+CPU type:	Intel Xeon Phi (Knights Landing) (Co)Processor
+CPU clock:	1.40 GHz
+--------------------------------------------------------------------------------
+Description:	Reference dgemm.
+
+Hello world, I'm thread 0 out of 1 total threads. 
+Working on problem size N=2048 
+ Elapsed time is : 0.7648 (sec) 
+--------------------------------------------------------------------------------
+Region MMUL_Region, Group 1: HBM_CACHE
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   0.762590 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+----------+------------+
+|         Event         |  Counter | HWThread 0 |
++-----------------------+----------+------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  | 1360071000 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  |  936927600 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  |  874466400 |
+|    EDC_RPQ_INSERTS    | EDBOX0C0 |    5606512 |
+|    EDC_RPQ_INSERTS    | EDBOX1C0 |    5782238 |
+|    EDC_RPQ_INSERTS    | EDBOX2C0 |    5604452 |
+|    EDC_RPQ_INSERTS    | EDBOX3C0 |    5778037 |
+|    EDC_RPQ_INSERTS    | EDBOX4C0 |    5602401 |
+|    EDC_RPQ_INSERTS    | EDBOX5C0 |    5775235 |
+|    EDC_RPQ_INSERTS    | EDBOX6C0 |    5604214 |
+|    EDC_RPQ_INSERTS    | EDBOX7C0 |    5781398 |
+|    EDC_WPQ_INSERTS    | EDBOX0C1 |     839327 |
+|    EDC_WPQ_INSERTS    | EDBOX1C1 |     832737 |
+|    EDC_WPQ_INSERTS    | EDBOX2C1 |     839657 |
+|    EDC_WPQ_INSERTS    | EDBOX3C1 |     833187 |
+|    EDC_WPQ_INSERTS    | EDBOX4C1 |     838735 |
+|    EDC_WPQ_INSERTS    | EDBOX5C1 |     832705 |
+|    EDC_WPQ_INSERTS    | EDBOX6C1 |     839063 |
+|    EDC_WPQ_INSERTS    | EDBOX7C1 |     832936 |
+|     EDC_MISS_CLEAN    | EUBOX0C0 |        427 |
+|     EDC_MISS_CLEAN    | EUBOX1C0 |        410 |
+|     EDC_MISS_CLEAN    | EUBOX2C0 |        426 |
+|     EDC_MISS_CLEAN    | EUBOX3C0 |        412 |
+|     EDC_MISS_CLEAN    | EUBOX4C0 |        415 |
+|     EDC_MISS_CLEAN    | EUBOX5C0 |        409 |
+|     EDC_MISS_CLEAN    | EUBOX6C0 |        420 |
+|     EDC_MISS_CLEAN    | EUBOX7C0 |        414 |
+|     EDC_MISS_DIRTY    | EUBOX0C1 |        410 |
+|     EDC_MISS_DIRTY    | EUBOX1C1 |        415 |
+|     EDC_MISS_DIRTY    | EUBOX2C1 |        406 |
+|     EDC_MISS_DIRTY    | EUBOX3C1 |        413 |
+|     EDC_MISS_DIRTY    | EUBOX4C1 |        415 |
+|     EDC_MISS_DIRTY    | EUBOX5C1 |        415 |
+|     EDC_MISS_DIRTY    | EUBOX6C1 |        411 |
+|     EDC_MISS_DIRTY    | EUBOX7C1 |        412 |
+|      MC_CAS_READS     |  MBOX0C0 |     145367 |
+|     MC_CAS_WRITES     |  MBOX0C1 |        551 |
+|      MC_CAS_READS     |  MBOX1C0 |     145355 |
+|     MC_CAS_WRITES     |  MBOX1C1 |        556 |
+|      MC_CAS_READS     |  MBOX2C0 |     145354 |
+|     MC_CAS_WRITES     |  MBOX2C1 |        547 |
+|      MC_CAS_READS     |  MBOX4C0 |     145362 |
+|     MC_CAS_WRITES     |  MBOX4C1 |        548 |
+|      MC_CAS_READS     |  MBOX5C0 |     145364 |
+|     MC_CAS_WRITES     |  MBOX5C1 |        547 |
+|      MC_CAS_READS     |  MBOX6C0 |     145350 |
+|     MC_CAS_WRITES     |  MBOX6C1 |        547 |
++-----------------------+----------+------------+
+
++----------------------------------------------+------------+
+|                    Metric                    | HWThread 0 |
++----------------------------------------------+------------+
+|              Runtime (RDTSC) [s]             |     0.7626 |
+|             Runtime unhalted [s]             |     0.6692 |
+|                  Clock [MHz]                 |  1499.9942 |
+|                      CPI                     |     0.6889 |
+|    MCDRAM Memory read bandwidth [MBytes/s]   |  3820.9056 |
+|    MCDRAM Memory read data volume [GBytes]   |     2.9138 |
+| MCDRAM Memory writeback bandwidth [MBytes/s] |   488.1216 |
+| MCDRAM Memory writeback data volume [GBytes] |     0.3722 |
+|      MCDRAM Memory bandwidth [MBytes/s]      |  4309.0272 |
+|      MCDRAM Memory data volume [GBytes]      |     3.2860 |
+|     DDR Memory read bandwidth [MBytes/s]     |    73.1950 |
+|     DDR Memory read data volume [GBytes]     |     0.0558 |
+|   DDR Memory writeback bandwidth [MBytes/s]  |     0.2766 |
+|   DDR Memory writeback data volume [GBytes]  |     0.0002 |
+|        DDR Memory bandwidth [MBytes/s]       |    73.4716 |
+|        DDR Memory data volume [GBytes]       |     0.0560 |
++----------------------------------------------+------------+
+
